@@ -1,0 +1,239 @@
+Theoretical Questions
+What are the key features introduced in Java 8?
+
+Lambda expressions, Stream API, Functional Interfaces, Default methods, Optional, Method references, Date and Time API (java.time package), etc.
+
+What is a Lambda Expression in Java 8?
+
+A concise way to represent an anonymous function. It allows you to pass functionality as an argument to a method.
+
+What are Functional Interfaces?
+
+An interface with exactly one abstract method. Examples: Runnable, Comparator, Predicate, Function, Consumer, Supplier.
+
+What is the purpose of the @FunctionalInterface annotation?
+
+It ensures that the interface has only one abstract method. If more than one abstract method is added, the compiler will throw an error.
+
+What is the Stream API in Java 8?
+
+A sequence of elements supporting sequential and parallel aggregate operations. It allows functional-style operations on collections.
+
+What is the difference between Collection and Stream?
+
+A Collection is a data structure that holds elements, while a Stream is a sequence of elements supporting functional-style operations like filter, map, reduce, etc.
+
+What are Intermediate and Terminal Operations in Streams?
+
+Intermediate operations: filter, map, sorted, etc. They return a new stream and are lazy.
+
+Terminal operations: collect, forEach, reduce, etc. They produce a result or side-effect and terminate the stream.
+
+What is the difference between map and flatMap in Streams?
+
+map: Transforms each element of the stream into another object.
+
+flatMap: Transforms each element into a stream and then flattens the streams into a single stream.
+
+What is the purpose of the Optional class?
+
+To avoid NullPointerException by providing a container that may or may not contain a non-null value.
+
+What are Method References in Java 8?
+
+A shorthand notation for calling a method using ::. Example: System.out::println.
+
+What are Default Methods in Interfaces?
+
+Methods with a default implementation in an interface. They allow adding new methods to interfaces without breaking existing implementations.
+
+What is the difference between Predicate, Function, and Consumer?
+
+Predicate: Takes an input and returns a boolean.
+
+Function: Takes an input and returns an output.
+
+Consumer: Takes an input and performs an operation without returning anything.
+
+What is the difference between parallelStream() and stream()?
+
+stream(): Processes elements sequentially.
+
+parallelStream(): Processes elements in parallel using multiple threads.
+
+What is the purpose of the Collectors class?
+
+To provide utility methods for collecting stream elements into collections, such as toList(), toSet(), toMap(), etc.
+
+What is the difference between limit() and skip() in Streams?
+
+limit(n): Returns a stream with the first n elements.
+
+skip(n): Returns a stream after skipping the first n elements.
+
+Coding Questions
+Write a program to filter a list of strings and return only those that start with "A".
+
+java
+Copy
+List<String> names = Arrays.asList("Alice", "Bob", "Anna", "Alex");
+List<String> result = names.stream()
+                           .filter(name -> name.startsWith("A"))
+                           .collect(Collectors.toList());
+System.out.println(result);
+Write a program to find the sum of all even numbers in a list using Streams.
+
+java
+Copy
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+int sum = numbers.stream()
+                 .filter(n -> n % 2 == 0)
+                 .mapToInt(Integer::intValue)
+                 .sum();
+System.out.println(sum);
+Write a program to convert a list of strings to uppercase using map.
+
+java
+Copy
+List<String> names = Arrays.asList("alice", "bob", "charlie");
+List<String> upperCaseNames = names.stream()
+                                   .map(String::toUpperCase)
+                                   .collect(Collectors.toList());
+System.out.println(upperCaseNames);
+Write a program to find the maximum number in a list using Streams.
+
+java
+Copy
+List<Integer> numbers = Arrays.asList(10, 20, 5, 30, 15);
+int max = numbers.stream()
+                 .max(Integer::compare)
+                 .orElse(0);
+System.out.println(max);
+Write a program to sort a list of strings in descending order using Streams.
+
+java
+Copy
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+List<String> sortedNames = names.stream()
+                                .sorted(Comparator.reverseOrder())
+                                .collect(Collectors.toList());
+System.out.println(sortedNames);
+Write a program to group a list of strings by their length using Collectors.groupingBy.
+
+java
+Copy
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "Dave");
+Map<Integer, List<String>> groupedNames = names.stream()
+                                               .collect(Collectors.groupingBy(String::length));
+System.out.println(groupedNames);
+Write a program to concatenate all strings in a list using Collectors.joining.
+
+java
+Copy
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+String concatenated = names.stream()
+                           .collect(Collectors.joining(", "));
+System.out.println(concatenated);
+Write a program to find the average of a list of integers using Streams.
+
+java
+Copy
+List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
+double average = numbers.stream()
+                        .mapToInt(Integer::intValue)
+                        .average()
+                        .orElse(0);
+System.out.println(average);
+Write a program to remove duplicates from a list using Streams.
+
+java
+Copy
+List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
+List<Integer> uniqueNumbers = numbers.stream()
+                                     .distinct()
+                                     .collect(Collectors.toList());
+System.out.println(uniqueNumbers);
+Write a program to find the first element of a list using Streams.
+
+java
+Copy
+List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
+int first = numbers.stream()
+                   .findFirst()
+                   .orElse(0);
+System.out.println(first);
+Write a program to check if all elements in a list satisfy a condition using allMatch.
+
+java
+Copy
+List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
+boolean allEven = numbers.stream()
+                         .allMatch(n -> n % 2 == 0);
+System.out.println(allEven);
+Write a program to flatten a list of lists using flatMap.
+
+java
+Copy
+List<List<Integer>> listOfLists = Arrays.asList(
+    Arrays.asList(1, 2, 3),
+    Arrays.asList(4, 5, 6),
+    Arrays.asList(7, 8, 9)
+);
+List<Integer> flattenedList = listOfLists.stream()
+                                         .flatMap(List::stream)
+                                         .collect(Collectors.toList());
+System.out.println(flattenedList);
+Write a program to create a map from a list of strings using Collectors.toMap.
+
+java
+Copy
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+Map<String, Integer> nameLengthMap = names.stream()
+                                          .collect(Collectors.toMap(
+                                              Function.identity(),
+                                              String::length
+                                          ));
+System.out.println(nameLengthMap);
+Write a program to demonstrate the use of Optional to avoid NullPointerException.
+
+java
+Copy
+Optional<String> name = Optional.ofNullable(getName());
+System.out.println(name.orElse("Default Name"));
+
+String getName() {
+    return null; // Simulating a method that might return null
+}
+Write a program to demonstrate the use of parallelStream for parallel processing.
+
+java
+Copy
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+List<Integer> squaredNumbers = numbers.parallelStream()
+                                      .map(n -> n * n)
+                                      .collect(Collectors.toList());
+System.out.println(squaredNumbers);
+Advanced Questions
+How would you handle exceptions in a Stream pipeline?
+
+Use a try-catch block inside the lambda or create a utility method to wrap the lambda.
+
+What is the difference between reduce and collect in Streams?
+
+reduce: Combines elements into a single result.
+
+collect: Accumulates elements into a mutable result container (e.g., a list or map).
+
+How would you implement a custom Collector in Java 8?
+
+By implementing the Collector interface and defining the supplier, accumulator, combiner, and finisher.
+
+What is the difference between Stream.peek() and Stream.forEach()?
+
+peek: Used for debugging purposes and is an intermediate operation.
+
+forEach: A terminal operation that performs an action for each element.
+
+How would you handle infinite streams in Java 8?
+
+Use Stream.iterate() or Stream.generate() with a limit or takeWhile/dropWhile operations.

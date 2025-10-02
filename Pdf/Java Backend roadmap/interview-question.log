@@ -1,0 +1,553 @@
+@EnableAutoConfiguration
+The @EnableAutoConfiguration annotation in Spring Boot is used to enable automatic configuration of beans in the Spring application context. When you include this annotation in your application, Spring Boot attempts to automatically configure various aspects of the application based on the class path dependencies and the environment.
+
+Here's a brief explanation of what @EnableAutoConfiguration does:
+
+Automatic Bean Configuration:
+Spring Boot analyses the class path to detect the libraries and frameworks present.
+Based on this analysis, it automatically configures beans and adds them to the Spring application context.
+
+Default Settings:
+Enables sensible default settings for various configurations.
+For example, if Spring Boot detects the presence of an embedded database dependency, it configures the DataSource bean and other related settings.
+
+Conditional Configuration:
+Uses conditions to determine whether to enable certain configurations or not.
+For instance, if the application has a Data Source bean already configured, Spring Boot may skip its own auto-configuration related to data sources.
+
+Reduced Boilerplate Code:
+Simplifies the configuration process and reduces the amount of boilerplate code that developers need to write.
+
+In most Spring Boot applications, @SpringBootApplication includes @EnableAutoConfiguration. Therefore, explicitly adding @EnableAutoConfiguration is often unnecessary unless you want to customize the auto-configuration behaviour.
+
+If you want to exclude certain auto-configurations or customize the behaviour, you can use the exclude attribute of @SpringBootApplication or create a separate configuration class annotated with @EnableAutoConfiguration and customize it as needed.
+
+Java code
+
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+public class MyApplication {
+    // ...
+}
+Remember that while @EnableAutoConfiguration provides convenience, it's essential to understand the auto-configuration being applied to your application, especially when dealing with complex configurations or when specific customization is required.
+
+@ControllerAdvice
+Exception Handling in Spring Boot
+In short, @ControllerAdvice is used for handling exceptions in web applications and returns a view as a response, while @RestControllerAdvice is used for handling exceptions in RESTful web services and returns a JSON or XML response.
+	
+Difference between @RestController @Controller
+Difference between @RestController AND @Controller
+
+@Inject and @Autowiring
+@Inject and @Autowired
+
+n+1 problem in Hibernate
+N+1 hibernate Problem and solution
+
+@OnetoMany and @ManytoOne implementation example
+@OneToMany and @ManyToOne
+
+2nd level caching
+Caching in Hibernate
+
+JPA - Method to use to get the employee whose salary are > 5
+findByEmployeeGreaterThan
+		LINK : https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
+JAVA 8 : Difference between map and flat map
+Java 8 - map and flatMap
+
+Where to use Map in java8
+Map in Java 8
+
+JAVA 8 : String Array to Optional Class conversion
+
+JAVA 8 : Program to return 1st non-repeating char in "India"
+
+CircuitBreaker , what we use?
+
+Zuul -ans -  API Gateway
+
+Jetty in springboot(enable jetty container and remove the Tomcat container)
+
+If one consumer of consumer group is down how it will ensure that the message are read - Configuration
+
+How the data is replicated in kafka - eg : replication factor>3
+Data Replication In Kafka
+
+How to check which Microservice is failing.. Like m1,m2,m3 are just fine while m4 is failing while m5 is fine too.. How to identify which one is failing. - HealthCheck url
+
+How to call one microservice from the another one.
+
+What is Impodent
+
+SQL Query for below problem
+	
+	Accunt Table : AccNo(PK), AccName
+	Card Table : Card No, Status, AccNo(FK)
+	
+	Q: No credit card and is Not Active
+	
+	DB
+	Select * from Account a 
+	Left Join Card c on a.accNo = c.accNo
+	Where c.status = "INACTIVE"
+  
+  
+  ================================================================================================================================================
+  
+  	1. Microservices Design Patterns
+	2. Microservices Design Patterns that you have used in your current Projects
+	3. How SAGA was implemented in QBSE(my project)
+	4. SAGA and CQRS
+	5. What is 2PCs
+	6. How the Communication happened between the Microservices
+	7. Discovery and MESH?
+	8. How you implemented Security in your Project
+	9. How OAUTh2 Works
+	10. JWT is enough?
+	11. Design Search Engine
+	12. In Spring Boot, Is multiple Data Sources (DB) are possible?
+	13. How you would design it?
+	14. Worked on NoSQL, MongoDB???
+	15. How to disable TOMCAT and how to configure Jetty. Steps??
+	16. Given a paragraph of text,
+	     return the count of each word where words with same characters must be considered same word,
+	      Eg - cat and act must be considered 1 word not 2 separate words.
+Working Code :
+public static void main(String[] args){
+        Character[] c ;
+        String str = "cat is act";
+        String[] s =   str.split("\\s+"); //cat is act
+
+        System.out.println(s.length);
+        Map<String,Integer> hashMap1 = new HashMap<>();
+        String sortedString;
+        for (String string : s) {
+            char[] ch = string.toCharArray();
+            Arrays.sort(ch);
+            sortedString=new String(ch);
+
+            if(hashMap1.containsKey(sortedString)){
+              hashMap1.put(sortedString, hashMap1.get(sortedString)+1);
+            }
+            else {
+                hashMap1.put(sortedString, 1);
+            }
+        }
+        System.out.println(hashMap1.size());
+    }
+O/P
+2
+2
+
+
+
+=======================================================================================================================================1. How do we configure spring boot projects?
+  https://www.baeldung.com/spring-boot-application-configuration
+The Port Number -server.port=8083
+The Context Path-server.servlet.contextPath=/springbootapp or any class implements WebServerFactoryCustomizer
+The White Label Error Page- implements ErrorController
+Customise the Error Messages implements WebServerFactoryCustomizer
+Shut Down a Boot Application Programmatically-public void shutDown()
+Configure the Logging Levels
+Configure Jetty or Undertow in Boot Application
+2. What is the purpose of Optional Class?
+Null Safety
+Improved Readability 
+Enforce Best Practices 
+3. What is functional interface
+A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. 
+From Java 8 onwards, lambda expressions can be used to represent the instance of a functional interface.
+ A functional interface can have any number of default methods. 
+
+4. What is Lambda expressions?
+A lambda expression is a short block of code which takes in parameters and returns a value. Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method.
+5. How to communicate between two micro services?
+Communication over Rest
+Rest template 
+Feign
+Message Driven 
+Both parties need to agree on message structure , tightly coupled 
+Event Driven 
+Loosely coupled , no need to have same message structure as services communicate based on Events 
+
+6. How to communicate asynchronously between two micro services?
+Message Driven 
+Both parties need to agree on message structure , tightly coupled 
+Event Driven 
+Loosely coupled , no need to have same message structure as services communicate based on Events 
+When to use What
+
+
+7. How can Kafka handle/process those many messages?
+Kafka is highly scalable. It is very easy to add large number of consumers
+Kafka also supports different consumption models\
+Kafka supports the ability to source messages from a wide range of producers.
+Kafka is linearly scalable for high volume of data. Adding more brokers / clusters will increase the throughput or decrease latency.
+Kafka handles spike of the events more efficiently. This is where Kafka truly shines because it acts as a “shock absorber” between the producers and consumers.
+8. Who is responsible for processing the messages in Kafka?
+Consumer
+9. Prepare architecture for below scenario
+a. Calculate salary for all employees working under project manager just by providing project manager's employee number as an input
+b. Design should support calculation @ project manager's level, his direct reportees & their sub reportees
+10. Draw architectures for current/past projects
+11. Explain your current role?
+12. Explain tools you used in projects?
+13. What are the challenges while converting monolithic application to microservices?
+14. How to use filters in Spring Boot?
+15. Explain the Apache Kafka architecture?
+16. What is offset?
+17. What is partition in Kafka?
+18. Explain the purpose of auto_offset_reset, auto_offset_commit?
+19. Write a program to find the second largest item in list using Java Stream API.
+20. Implement Stack using the ArrayList
+21. Design pattern for microservices.
+22. Basic Array and Arraylist concepts.
+23. Past project details.
+24. The design pattern description of my past project
+25. Lambda expressions
+26. Explain Microservice communications
+27. Write code, reverse a string without using built in functions for better performance & use string buffer & builder?
+28. Explain uses of Hibernate?
+29. Why Hibernate?
+30. What's the issues with hibernate?
+31. Explain local Variables and primitive technical details?
+32. Explain spring application context load?
+33. Explain your current Project architecture?
+34. How do we call Microservices from UI and what is the configuration?
+35. How do we handle with failing/down time/network issue applications?
+36. What is Alert messaging system in your application?
+37. When database is down then how do you handle this?
+38. What Monolithic and Microservices applications?
+39. What are the disadvantages of Microservices architecture?
+40. @Sync & @Transactional annotations, if adding any annotation then how Springboot works internally
+41. How you will add any new Configurations?
+42. What are the Sprinboot Actuator?
+43. What is Netflix Service registry and how it works?
+44. ECMA 6 new features?
+45. From UI to backend layer and how it works?
+46. What are the steps to follow to debug the issues?
+47. What is SLA and how incident is created?
+48. What are debugging tools, project management tools and build/deployment tools you worked on?
+49. How cache mechanism works?
+50. How authorization happening in your project?
+51. What are the searching patters in Splunk tool and how to identify the issues?
+52. Introduce yourself, explain previous & current project
+53. Solve below Problem using linked list and write code o Input: 1->2->3->4->5->6 o Output: 3->2->1->6->5->4
+54. Explain design pattern? What is singleton design pattern & write code?
+55. What is spring framework? why we use it?
+56. Explain the difference between ArrayList and Linked List
+57. Explain Internal working of HashMap
+58. Which databases you are working with? Explain Indexing?
+59. What is dependency injection spring framework and how we achieve?
+60. How to make singleton class thread safe?
+61. What is rest controller? Explain
+62.   Overloading and overriding concepts in oops
+63.   String vs Sting Buffer vs String Bulder concepts
+64.   Collections(ArrayList vs LinkedList),List,queue,Set
+65.   Exceptions in Java
+66.   Multithreading concepts in Java in Advance
+67.   Spring Boot Annotations Bean,Autowired,filed Injuction
+68.   Actuator in springBoot. Not only for health check and some Other use cases also Need to discuss.
+69.   JPA 
+70.   Entity Classes
+71.   Table Mapping
+72.   Http Requests 
+73.   post vs put Mapping
+74.   Error Status Codes
+75.   Agile methodologies process , user-story and jira board process.
+76.   Development Deployment process.
+77.   Fault tolerance question(Scenario based).
+78.   Suppose any changes happened in 3rd party api side and that changes have not share with development team and developer trying to push some code their own changes on production. how they will assure that their changes will not impact any other business(Or what approach will you take to assure your code will not break other business scenarios) .
+79.   If one user wants to change the version of any properties which is stored in database and same times another user wants to change the version with updated version what approach will take to do it.
+80.   Suppose i want to get the data by passing multiple fields as name, id, order..etc.(more than one) how you will be able to map in the controller class.
+81.   Suppose A, B, C ,D are messages and consumer want to access only A message then how consumer will be able to do it(only message A).
+82.   If publisher published 30kb file then how will assure that consumer will be able to access 30kb file or not ?
+83.   Microservices start to end architecture and  Security.
+84.   Kafka and JMS questions( Scenario based).
+ 
+85.   Deployment strategy for a critical application for a high traffic region like Newyork for example where more traffic is expected.
+86.   What approach u take to redesign a application which has 1000 lines of code n too much of data in DB.
+87.   A scenario was given and asked if you will choose monolithic or microservices for this.
+88.   An application has gone live, what are the top 3 things that you plan for application support.
+89.   You want to build a reporting system, what are the top 3 things that you consider for this.
+90.   Given 3 scenarios, what is your strategy to build an API for these.
+91.   There's a query that has started performing slowly over the time, what are the top 3 things that you will consider to fix the problem.
+92.   Question on integration testing in microservices
+93.    @profile annotation in spring boot n it's uses.
+94.   How do you ensure that you are writing quality code n not impacting or creating issues.
+ 
+95.   Apache Kafka & Multi threaded environment
+      Example:
+      Producer service:
+            Writes records into queue
+      Consumer service:
+            Reads records from queue and writes them into cache
+ 
+      How will you write a code for writing the records into cache in a Multithreaded environment.
+ 
+    	2.  How will you use Generic type to pass the records in the above code?
+    	3.  Write a JAVA program to print a fibonacci series using recursion
+    4.  What is the purpose of Elastisearch and why it is being the fastest search engine?
+   	 5. Write a query to index a record in apache kafka?
+    	6.  Write a MONGODB query to find a customer by their name without JPA
+ 
+96.   why kafka required?
+  
+97.   how a load balance is done in consumer side ,
+  
+98.   Service discovery 
+  
+99.   Topic , partition, configuration required in kafka       	
+  
+100.           callable vs runnable, multithreading concepts
+  
+101.           spring boot annotations
+  
+102.           @Bean vs @Component
+  
+103.           Earlier how bean is declared in spring 
+ 
+12th July 2023,
+what is dependancy injection with usage
+types of dependancy injection
+what is bean in spring
+what are java design pattrens
+what is signleton pattren
+what is prototype pattren
+what is method overloading
+what is method overriding
+differences between string and string buffer
+difference between haspmap and hash set
+hashmap internal working
+what is kubernetes
+how to optimize the api response time if its taking more time
+if multiple users want to access same database table and trying to update same record how we can handle for update record on latest record. for examplae user1, user2 is trying to update manager name and contact number of one employee record . if user 1 updated manger name, user 2 need to update contactnumber on top of updated  record with manager name and both users trying to do this on same time. how we can acheive this.
+if two services trying to contact each other, after some api call service2 returned some error response to  service1. how can we handle this scenario
+have you worked on any scheduler jobs in java?
+have you worked on docker and kubernetes?
+what is http calls in rest api
+when to use getmapping ?
+ if we need to send more params as arguments to get details of employee which approch will be suitable.
+ 
+14th July 2023, 
+1.      Explain about your current and previous project and roles and responsibility.
+2.      What challenges have you faced during the development how you deal with that?
+3.      What is heap memory?  how heap memory is working explain about it?
+4.      Types of memory in java
+  How heap memory is different from other?
+5.      How you will optimize the usage of  heap memory in programmatic way.
+6.      What is JDBC
+7.      What is ACID property?
+8.      How we will do the db scaling ?
+9.      What is horizontal and vertical scaling?
+10.   When we will use horizontal scaling and how we can do horizontal scaling?
+11.   What is springboot why we will use springboot framework?
+12.  What is docker and kubernethes? tell me apart from deployment any other knowledge or experience?
+13.  How you will design the application on high traffic (Scenario based question asked about design)
+14.  Types of database Do you have hands on experience on NOSQL?
+15.  While developing the application which approach will you follow? How you will ensure the code you have written is working fine.
+ 
+18th July 2023,  
+16.   Roles and responsibilities of my previous project
+17.    Technologies used in the project
+18.    Write a program array of integers whether it can be partitioned in to two subsets whose sum is equal
+  In this program they asked so many logics to write
+19.   What is 2-D Array?
+20.   Why we need to use 2-D array in above Program?
+27th July 2023
+ 
+104.           create your own logger class in java
+105.           executer framework in thread
+106.           reentrant lock in thread
+107.           write a program to explain @Qualifier in spring
+108.           spring boot benefits
+109.           what is topic, cluster in kafka
+110.           difference between @Bean and @Copmonent annotation
+ 
+28th Aug 2023
+1.      Tell me about yourself briefly
+2.      why spring boot, what are advantages in spring boot, why not spring
+3.      what are the advantages in monolithic architecture
+4.      how you deploy your spring boot
+5.      what is CAP theorm
+6.      what are partition in kafka and kafka architecture and why you need kafka
+7.      how to call from one microservice to other microservice
+8.      we have 2 tables Customer(id,name) n Order(id, custId, itemno, qty, timestamp)
+select all customers names who are did yesterdays orders which are did by customers group   	by customer name
+9.      write spring boot application for above query
+10.   what are ACID properties, does these apply in java as well
+11.   what is ATOMIC in java (eg: AtomicInteger)
+ 
+29th Aug 2023: Interview panel – Rajeev Ranjan
+ 
+111.           How do you design to transfer money from one account to another account.
+112.           write the code for above design
+113.           Explain the implimented logic
+114.           write the exceptions
+Counter Questions:-
+---------------------------
+1)How do you transfer money from one account to multiple accounts High level design
+2)Real time money transfer scenario while sending money from one account to multiple what approach you use to check user is having sufficient balance to transfer money.
+ 
+31st Aug 2023: Interview panel 
+ 
+115.          What are locks/Reentarant Locks in java?
+116.          What is Executor service / Completable Futures ? Write sample code.
+117.          How you used Kafka in your project? Explain all the terminologies in Kafka cluster? What makes Kafka scalable? Why are partitions used? Where partitions are stored?  Explain scalability in General.
+118.          What is Redis Cache? Why we need a cache? Which data structure is used in cache and why? How you'll make your cache thread safe? Implement your own Cache Class using java.
+119.          Explain in which all scenarios @Bean annotation is used in Spring boot?
+
+-  Which all NO SQL databases  you have used or aware of
+	Couchbase , Mongo ,Dynamo,Redis,Cassandra, HBASE
+
+-  difference between RDBMS vs NOSQL
+	
+- TIBCO VS KAFKA
+- performance tunning 
+-  Create an object with First,last name  and list of unique email adddrss (Which are combination of first name and last name )
+-  caching techniques 
+-  Hibernate performance questions
+-  Scalling application from 1000 concuurent requests to scale it it to 100000
+
+=============================================================================================================================================================================================
+	1. Java 8 New Features
+	2. Meta Space in Java 8
+	3. Intermediate and Terminal
+	4. Arrays.List("SSS","SWA","","",AA"","","ERE")
+	Find the No of Empty String in this ArrayList
+	5. SOLID
+	6. Design Patterns 
+	7. Use of Factory Design pattern
+	8. Java APEX
+	9. Memory Management and GC
+	10. HashMap Collision
+	11. Explain Spring MVC
+	12. How the Transactions are handled in Microservices
+	13. Use of Spring Boot Security
+	14. Difference between JPA and Hibernates 
+	15. Diff between JPARepository and CRUDRepository
+	16. What is Kafka Offset
+	17. How Kafka is Fault Tolerance
+	18. How security is Implemented while reading Kafka Topic
+	19. Whats the significance of using Key-Value pair in Kafka
+	20. How to write JUNIT for static methods
+	21. What is the return type of JUNIT
+	 
+	
+==============================================================================================================================================================================================
+	1. Services that you have used in AWS
+	2. Use case where you use SQS
+	3. Difference between Queue and Topic
+	4. What is Event Driven Services. How we can create them.
+	5. Microservices Design pattern
+	6. Different Types of SAGA
+	7. Circuit Breaker and solution
+	8. How you implemented the Hystrix or resilince4J
+	9. Write the Code to implement the Validation in Spring Boot
+	Requirement :
+	Employee 
+	Validate the Request 
+	Save it to MySQL DB
+	
+	Solution given (@Valid was missed) : 
+	EmployeeController 
+	
+	@Autowired
+	EmployeeRepository  
+	@RequestMapping("/api")
+	Public class EmployeeController {
+	
+	@PostMapping("/employee")
+	Public Employee createEmployee(@RequestBody Employee emp)
+	{
+	Return employee.save(emp)
+	
+	}
+	
+	
+	}
+	
+	
+	
+	
+	Employee -> @Entity 
+	
+	EmployeeRepository extending the JPARepository
+	
+	EmployeeService
+	
+	https://www.javaguides.net/2021/03/validation-in-spring-boot-rest-api-with-hibernate-validator.html
+	10. Status Code if the Request Body is Incorrect 
+	400 - Bad Request 
+
+==============================================================================================================================================================================================
+	1. How the Front End calls the BE 
+	2. Full flow of the Services you created
+	3. Have you implemented Cache in Spring Boot
+	4. What is SQS? Fullform?
+	5. What would happen if the consumer is failed to read the message from SQS. Would there be any retry mechanism?
+	6. How you were testing your Endpoint from Postman?
+	7. Were you passing any Ticket/Token
+	8. What JWT token is made of?
+	9. How you were validating it at your service level that the Token is Valid?
+
+=============================================================================================================================================================
+
+
+	1. Write a program to print the count of each character in a String?
+	    Input: String s = "string data to count each character";
+	    Output: {s=1, t=5, r=3, i=1, n=2, g=1,  =5, d=1, a=5, o=2, c=4, u=1, e=2, h=2}
+	2. Performance Issues that you have seen earlier in your past projects and How you fixed it.
+	3. There is a One Table which contains the information about the Product and the Price details. We want to see the Price and discount details from it. There is 1M of records there. How we will make sure about its Performance ..?
+	4. One Scenario Based Question :
+	E-commerce Website
+	Cart Details Page shows the Orders
+	Order 1 - 2QTY
+	Order 2 - 2QTY
+	
+	On clicking OK button
+	It will call some BE API.
+	Suppose we clicked on OK button 2 Times
+	It will update the Quantity of Oders.
+	it will make it
+	Order 1 - 4QTY
+	Order 2 - 4QTY
+	5. How Security was Implemented in your Project
+	6. DSA - Remove the Nth Node from the LinkedList.
+
+==========================================================================================================================================================
+
+	1. Java 8 code to find all triplets (a, b, c) in the given array where a^2 + b^2 = c^2
+	2. Print the elements which are getting repeated in
+	 int[][] arr = {{2, 1, 4, 3},
+	               {1, 2, 3, 2},
+	               {3, 6, 2, 3},
+	               {5, 2, 5, 3}};
+
+===============================================================================================================
+
+	1. Program to return 1st non-repeating char in "India"
+	2. Given a paragraph of text,
+	     return the count of each word where words with same characters must be considered same word,
+	      Eg - cat and act must be considered 1 word not 2 separate words.
+	3. Arrays.List("SSS","SWA","","",AA"","","ERE")
+	Find the No of Empty String in this ArrayList
+	4. Write a program to print the count of each character in a String?
+	    Input: String s = "string data to count each character";
+	    Output: {s=1, t=5, r=3, i=1, n=2, g=1,  =5, d=1, a=5, o=2, c=4, u=1, e=2, h=2}
+	5. DSA - Remove the Nth Node from the LinkedList.
+	6. Java 8 code to find all triplets (a, b, c) in the given array where a^2 + b^2 = c^2
+	7. Print the elements which are getting repeated in
+	 int[][] arr = {{2, 1, 4, 3},
+	               {1, 2, 3, 2},
+	               {3, 6, 2, 3},
+	               {5, 2, 5, 3}};
+	8. 
+
+========================================================================================================
+
+
+
+140000
+  3850
+	

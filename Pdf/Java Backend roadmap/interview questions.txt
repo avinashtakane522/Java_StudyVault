@@ -1,0 +1,384 @@
+
+Coding Pattern
+Java interviews can be daunting, but mastering core concepts and problem-solving patterns can set you apart. This guide synthesizes insights from three valuable resources, offering a condensed, actionable plan for your interview preparation.
+1. Two Pointers Pattern
+2. Fast and Slow Pointers
+3. Backtracking
+4. In-place Reversal of a Linked List
+5. Sliding Window Technique
+6. Depth-First Search (DFS)
+7. Breadth-First Search (BFS)
+8. Dynamic Programming
+
+
+Docker
+1. What is Docker ?
+2. What are the Features of Docker?
+3. What are the Pros and Cons of Docker?
+4. Name and Explain the Components of Docker.
+5. Name and Explain the State of a Docker Container.
+6. Can You tell What is the Functionality of a Hypervisor?
+7. Difference between Docker and Virtualization?
+8. On What Circumstances Will You Lose Data Stored in a Container?
+9. What is Docker Hub?
+10. What Command Can You Run to Export a Docker Image As an Archive?
+11. What Command Can Be Run to Import a Pre-Exported Docker Image Into Another Docker Host?
+12. Can a Paused Container Be Removed From Docker?
+13. How Do You get the Number Of Containers Running, Paused, and Stopped?
+14. How to Start, Stop, and Kill a Container?
+15. Can You Tell the Difference Between CMD and ENTRYPOINT?
+16. What are the Key Distinctions Between Daemon Level Logging and Container Level Logging in Docker?
+17. What Does the Docker Info Command Do?
+18. Where are Docker Volumes Stored in Docker?
+19. Can You Tell the Differences Between a Docker Image and Layer?
+20. Can a Container Restart By Itself?
+21. Name the Essential Docker Commands and What They Do.
+22. What are Docker Object Labels?
+23. How Do You Check the Versions of Docker Client and Server?
+24. Why is Docker System Prune Used? What Does It Do?
+25. What is Docker Swarm?
+26. How Do You Scale Docker Containers Horizontally?
+27. What Is the Difference Between Docker Restart Policies “no”, “on-failure,” And “always”?
+28. How Do You Inspect the Metadata of a Docker Image?
+29. How Do You Limit the CPU and Memory Usage of a Docker Container?
+30. What are the Differences Between Docker Community Edition (CE) and Docker Enterprise Edition (EE)?
+31. What Is the Purpose of the “docker checkpoint” Command?
+32. Can We Use JSON Instead Of YAML While Developing a Docker-Compose File in Docker?
+33. Describe the Lifecycle of a Docker Container.
+34. How Will You Ensure Container 1 Runs Before Container 2 While Using docker-compose?
+35. How Does Docker Handle Container Isolation and Security?
+36. How do the Docker Daemon and the Docker Client Communicate With Each Other?
+37. Can You Implement Continuous Development (CD) and Continuous Integration (CI) in Docker?
+38. Is it a Good Practice to Run Stateful Applications on Docker?
+39. What Is the Purpose of Docker Secrets?
+40. How Do You Create a Multi-stage Build in Docker?
+41. How Do You Update a Docker Container Without Losing Data?
+42. How Do You Manage Network Connectivity Between Docker Containers And the Host Machine?
+
+
+Redis
+2. What is in-memory Database?
+3. Isn’t the Redis data lost if there’s a system crash?
+4. How Redis achieve persistence by Snapshotting?
+5. How redis achive persistence by AOF?
+6. Files will keep on growing as long as AOF executed. Won’t it consume more memory? What is the solution provided by redis?
+7. Redis String data-type.
+8. Explain SET & GET command.
+9. Redis List data-type.
+10. Explain List operations.
+11. Explain Blocking operations on lists.
+12. Redis SET data-type.
+13. Explain Redis SET operations.
+14. Explain SINTER & SUNION.
+15. Explain SUNIONSTORE & SINTERSTORE.
+16. Redis Hashes data-type.
+17. Explain HASH data-type operation.
+18. Explain Redis Sorted sets.
+19. Explain redis Sorted Set operation.
+
+
+Microservices
+2. What are microservices in spring boot?
+3. What are Microservices in Java?
+4. What is Microservices Architecture?
+5. Why Microservices?
+6. What is an API gateway in microservices?
+7. How to deploy microservices?
+8.How to handle exceptions in microservices?
+9. What is Spring Cloud?
+10. Features of Spring Cloud
+11. How Do You Override A Spring Boot Project’s Default Properties?
+12. How Is Spring Security Implemented In A Spring Boot Application?
+13. Which Embedded Containers Are Supported By Spring Boot?
+14. Where Do We Use WebMVC Test Annotation?
+15. How to Configure Spring Boot Application Logging?
+16. What is REST/RESTful and what are its uses?
+17. What is the use of PACT in Microservices architecture?
+18. What is OAuth?
+19. What is Conway’s law?
+20. What do you understand by Contract Testing?
+21. What is End to End Microservices Testing?
+22. What is the use of Container in Microservices?
+23. What is a Consumer-Driven Contract (CDC)?
+24. What is Canary Releasing?
+25. Tell me the name of some famous companies which are using Microservice architecture.
+26. What is Domain Driven Design?
+27. Why there is a need for Domain Driven Design (DDD)?
+28. What is Ubiquitous language?
+29. What are different types of Tests for Microservices?
+30. How would you handle distributed transactions in microservices?
+31. What do you mean by Continuous Integration (CI)?
+32. What is the role of an architect in Microservices architecture?
+33. Can we create State Machines out of Microservices?
+34. What are Reactive Extensions in Microservices?
+35. How do you handle service dependencies and discoverability in microservices?
+
+
+HashMap
+How Big Can a HashMap Be?
+Starting Size of a HashMap
+Why Resize the HashMap?
+What is a Race Condition?
+How Does a HashMap Work?
+Avoiding Collisions
+// If key not found, add new node to linked list at table[i]
+What is a Hash Function?
+
+
+
+Multithreading
+1. RUN
+2. RUNNABLE
+3. NEW 
+4. WAITING
+5.TIMED_WAITING
+6.TERMINATED
+
+3. Differentiate between process and thread.
+4. What do you understand by inter-thread communication?
+5. What is the purpose of the wait() method in Java?
+6. Why must the wait() method be called from the synchronized block
+7. What are the advantages of multithreading?
+8. What are the states in the lifecycle of a Thread?
+9. Explain the difference between preemptive scheduling and time slicing.
+10. What is context switching?
+11. Differentiate between the Thread class and Runnable interface for creating a Thread.
+12. What does join() method?
+13. Describe the purpose and working of the sleep() method.
+14.What is the difference between wait() and sleep() method?
+15.Can we call the run() method instead of start()?
+16. What about the daemon threads?
+17. What are the two ways of implementing thread in Java?
+18.What’s the difference between notify() and notifyAll()?
+19. What do you understand about a “thread” in Java programming?
+20. What are some fundamental advantages of multithreading in Java?
+21. What is the fundamental difference between a process and a thread?
+22. What is inter-thread communication?
+23. What are some functions used to perform inter-thread communication in Java?
+24. What do you understand about the wait() function in Java?
+25. What do you understand by context switching?
+26. What is the function of the join() method?
+27. What is the function of the sleep() method?
+28. What do you understand about Deadlock situations in Java Multithreading?
+29. How do you detect deadlock situations in Java?
+30. How can deadlock situations be avoided in Java?
+31. How do threads communicate with each other?
+32. Can two threads execute two methods (static and non-static concurrently)?
+33. What is the purpose of the finalize() method?
+34. What is the synchronized method and synchronized block? Which one should be preferred?
+35. What is Livelock? What happens when it occurs?
+36. What is BlockingQueue?
+40. What is CyclicBarrier and CountDownLatch?
+41. What do you mean by inter-thread communication?
+42. What is Thread Scheduler and Time Slicing?
+43. What is a shutdown hook?
+44. What is busy spinning?
+45. What is ConcurrentHashMap and Hashtable? In java, why is ConcurrentHashMap considered faster than Hashtable?
+46. Explain thread priority.
+47. What do you mean by the ThreadLocal variable in Java?
+48. What is semaphore?
+49. Explain Thread Group. Why should we not use it?
+50. What will happen if we don’t override the thread class run() method?
+
+
+OOPS
+Classes & Objects
+Java Objects
+Java Constructors
+Default Constructor
+Parameterized Constructor
+Modifiers in Java
+Inheritance
+Polymorphism
+Abstraction
+Interface
+Encapsulation
+Association
+
+
+1. What is String in Java?
+2. Is String a class or data type in Java?
+3. How many ways can we create string object in Java?
+4. What is String Constant Pool in Java?
+5. What is the meaning of Immutable in terms of String?
+6. Why string object is immutable in java?
+7. What is the superclass of string class in Java?
+8. What is String literal in java? How is string literal stored in memory?
+9. Why Java uses the concept of string literal?
+10. How are String literals cleared from String constant pool?
+11. What are the drawbacks of creating a large number of string literals in the memory pool?
+12. How many objects will create for the identical string?
+13. How many total objects will be created in the following code?
+14. How many total objects will create in the following code?
+15. How many total objects will be created in the following code?
+16. Can we use reflection to clear a string object?
+17. Why string class is declared as final in java?
+18. How many interfaces are implemented by String class?
+19. Does String is thread-safe in java?
+20. What is the disadvantage of string class in java?
+21. Is String a wrapper class?
+22. How to compare two Strings in Java?
+23. What is the difference between = = (double equal operator) and equals method in Java?
+24. What will be the output of the following code?
+25. What will be the output of the below code?
+26. What will be the output of the following program?
+27. Consider the following code and think about the output.
+35. What is a mutable string in Java?
+36. Why StringBuffer objects in Java are mutable?
+37. What is the difference between length and capacity in Java StringBuffer?
+38. How will you add string in StringBuffer? Give an example.
+39. When will you use StringBuffer if String class is already available?
+40. What are the most widely used methods of StringBuffer class in Java?
+41. Why do we need StringBuilder in Java?
+42. Which class is more preferable: StringBuffer or StringBuilder? Why?
+43. When should you use StringBuilder?
+44. What is the difference between String, StringBuffer, and StringBuilder?
+
+
+
+
+
+Java8
+How will you write a code for writing the records into cache in a Multithreaded environment. 
+How will you use Generic type to pass the records in the above code?
+Write a JAVA program to print a fibonacci series using recursion
+Write a MONGODB query to find a customer by their name without JPA
+What are the main features introduced in Java 8?
+What is a Lambda expression?
+What is a functional interface?
+What is the Stream API in Java 8?
+What are the benefits of using the Stream API?
+What are default methods in interfaces?
+What is the Optional class in Java 8?
+Write a lambda expression to sort a list of strings in ascending order.
+Use the Stream API to filter even numbers from a list and print them.
+Implement a custom functional interface and use a lambda expression with it.
+How can you use the java.time package to get the current date and time?
+What is the purpose of the map() function in the Stream API? Provide an example.
+	
+Spring boot
+Exlpain about Transactional Management
+How do you perfomr Exception Handling?
+what is dependency inversion and IOC container in spring boot
+what are the scopes of bean in spring boot
+Explain about WebSocket
+About AOP, What is AOP, and why is it used in Spring?
+Explain the terms "cross-cutting concerns" and "aspect" in the context of AOP.
+What is a "pointcut" in AOP?
+Explain the types of advice in AOP.
+How do you enable AOP in a Spring Boot application?
+Can you give an example of a real-world scenario where AOP would be beneficial?
+Explain the term "AspectJ annotations" in the context of Spring AOP.
+What is the role of the @EnableAspectJAutoProxy annotation in a Spring Boot application?
+Differences between @SpringBootApplication and @EnableAutoConfiguration:
+Microservices with Spring Boot:
+Reactive Programming with WebFlux:
+Spring Boot Actuator Customization:
+Spring Boot Data REST:
+Spring Boot Startup Process:
+Spring Cloud for Distributed Systems:
+Spring Boot Security for Web Applications and REST APIs:
+Microservices Orchestration with Spring Cloud Netflix:
+Distributed Transactions in Microservices:
+Core Spring (Dependency Injection and IoC Container):
+What is Inversion of Control (IoC)?
+Explain the difference between Dependency Injection and Inversion of Control.
+What is the Spring IoC container?
+Describe the types of Dependency Injection supported by Spring.
+Explain the bean life cycle in Spring.
+Differentiate between singleton and prototype scopes in Spring.
+How can you inject values into Spring beans?
+What is the purpose of the @Autowired annotation?
+Explain the role of the @ComponentScan annotation.
+What is the purpose of the @Qualifier annotation?
+Describe the purpose of the @Value annotation.
+Explain the differences between constructor injection and setter injection.
+What is the purpose of the @PostConstruct and @PreDestroy annotations?
+How does Spring support the Factory design pattern?
+Explain the concept of the Spring BeanPostProcessor.
+Spring AOP (Aspect-Oriented Programming):
+What is Aspect-Oriented Programming (AOP)?
+Explain the terms "aspect," "join point," and "advice" in AOP.
+What are pointcuts in AOP, and how are they defined?
+Differentiate between "before," "after returning," and "around" advice.
+Explain the concept of weaving in AOP.
+What is the difference between Spring AOP and AspectJ?
+How do you enable AOP in a Spring application?
+Explain the use of the @Aspect annotation in Spring.
+What is the purpose of the @Pointcut annotation?
+Describe the types of pointcuts in Spring AOP.
+Explain the term "aspect ratio" in AOP.
+How does Spring AOP handle checked and unchecked exceptions?
+What is the purpose of the ProceedingJoinPoint interface?
+How can you achieve method-level security using AOP in Spring?
+Spring MVC (Model-View-Controller):
+What is the Spring MVC framework?
+Explain the roles of the Model, View, and Controller in Spring MVC.
+How does DispatcherServlet work in Spring MVC?
+Differentiate between @Controller and @RestController.
+What is the purpose of the @RequestMapping annotation?
+Explain the use of @PathVariable in Spring MVC.
+How does Spring MVC handle form submissions?
+What is the purpose of the @ModelAttribute annotation?
+Explain the differences between @RequestParam and @PathVariable.
+How can you handle exceptions in Spring MVC?
+Describe the role of the ModelAndView class.
+What is the purpose of the @ResponseBody annotation?
+Explain the use of the @ResponseStatus annotation.
+How can you enable the use of Java 8 Date and Time API in Spring MVC?
+What is the purpose of the RedirectAttributes class?
+How does Spring support file uploads in a web application?
+What is Spring Boot, and how does it simplify the development of Spring applications?
+Explain the purpose of the @SpringBootApplication annotation.
+How does Spring Boot handle configuration?
+Describe the concept of Spring Boot starters.
+What is Spring Boot Auto-Configuration, and how can you customize it?
+Explain the purpose of the application.properties (or application.yml) file in Spring Boot.
+What is the purpose of the SpringApplication class in Spring Boot?
+How can you create a custom banner in a Spring Boot application?
+Describe the role of the @RestController annotation in Spring Boot.
+How does Spring Boot support externalized configuration?
+What is the Actuator module in Spring Boot, and what endpoints does it provide?
+Explain the differences between Spring Boot and Spring Cloud.
+How can you profile a Spring Boot application, and what are the available profiles?
+Describe the purpose of the @SpringBootTest annotation.
+How does Spring Boot support testing?
+What is Spring Data, and how does it simplify data access in Spring applications?
+Explain the role of Spring Data repositories.
+Describe the differences between JpaRepository and CrudRepository.
+How can you define custom query methods in Spring Data repositories?
+What is the purpose of the @Query annotation in Spring Data JPA?
+Explain the concept of Query by Example (QBE) in Spring Data.
+How does Spring Data JPA handle transactions?
+What is the purpose of the @Transactional annotation?
+How can you perform pagination in Spring Data repositories?
+Explain the differences between Hibernate and Spring Data JPA.
+What is Spring Data REST, and how does it simplify the development of RESTful APIs?
+Spring Security:
+What is Spring Security, and why is it important?
+Explain the basic architecture of Spring Security.
+How can you configure authentication in a Spring Security application?
+Describe the purpose of the UserDetails interface.
+
+Kafka
+How the data is replicated in kafka - eg : replication factor>3
+Data Replication In Kafka
+How can Kafka handle/process those many messages?
+Who is responsible for processing the messages in Kafka?
+Explain the Apache Kafka architecture?
+What is offset?
+What is partition in Kafka?
+Explain the purpose of auto_offset_reset, auto_offset_commit?
+Kafka and JMS questions( Scenario based).
+What is the purpose of Elastisearch and why it is being the fastest search engine?
+Write a query to index a record in apache kafka?
+how a load balance is done in consumer side ,
+Service discovery 
+What is Topic , partition, configuration required in kafka       
+How you used Kafka in your project? Explain all the terminologies in Kafka cluster? What makes Kafka scalable? Why are partitions used? Where partitions are stored?  Explain scalability in General.
+What is Kafka Offset
+How Kafka is Fault Tolerance
+How security is Implemented while reading Kafka Topic
+Whats the significance of using Key-Value pair in Kafka
+
+

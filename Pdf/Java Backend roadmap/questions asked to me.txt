@@ -1,0 +1,183 @@
+------------------------------------------
+DOCKER, KUBERNETES, AWS, Jenkins, CI/CD
+------------------------------------------
+
+Why do we need docker container when we can create jar using SpringBoot?
+"Containers package your application along with all its dependencies and environment settings, ensuring that it runs consistently across different environments." What does this mean?
+But this can be achieved using jars as well and run it on a VM. How is docker beneficial?
+How do you integrate docker with your project and how is that deployed in AWS?
+What is a Docker Image and Docker Container?
+What is an ECS cluster? What are Fargate and EC2 cluster? What is a task in ECS?
+How do you create ECS task for both Fargate and EC2? Are Fargate task and ECS task same?
+If there are multiple microservices do we need to create different containers for all or we can run all services in the same container? How many ECS clusters do we need for these microservices? How to enable Load Balancing in this? Do we need different ECS tasks for different microservice? How to scale the instances of these microservices?
+What are tasks/clusters/instances etc?
+What are we scaling and why do we need these different type of scaling?
+What is a logical group of tasks or service and how is it related to a cluster and a container? If EC2 is the cluster then why do we need multiple tasks/container to run within it. Is it like a VM and how does it differ from a container?
+When we define a docker file we provide an operating system like alpine etc and if the ec2 cluster hosting the docker container has different OS then How will this be managed and in the ec2 instance do we need to install specific java version or just need to provide inside dockerfile?
+How can we have different deployment strategies for springboot microservices for an application which is deployed in ec2 and aws fargate using docker and ecs?
+What is ECS service definition JSON file and where is it used?
+What is AWS CodeDeploy?
+How to integrate aws codeDeploy with jenkins pipeline?
+How do you upload and download files in Amazon S3?
+How to set primary key in DynamoDB?
+What is IAM and AWS secrets?
+What happens when docker image size is increased over time?How can we reduce it?
+What is Ingress in Kubernetes?
+What is NGINX in Kubernetes?
+Setting up NGINX and Ingress in Kubernetes?
+Kubernetes URL Sent to Client to Call the Pods
+How can we deploy using docker and kubernetes in springboot project?
+What are pods? Is it same as tasks in ECS? how many containers does a pod contain and how does it run since it does not have a cluster like ec2 to run?
+Elaborate on node, pods, kubernetes clusters and container.
+How a Jenkins pipeline deploys a docker image in kubernetes cluster using helm?
+What is helm? What is Kubernetes manifests?
+What are the deployment strategies in Kubernetes?
+How is Shadow deployment different from Canary Release?
+What is the difference between load balancer, ingress controller and service mesh? And how does these help in deployment strategies like rolling update, blue green and canary?
+What is Docker?
+How to dockerize your application?
+What are Docker Image?
+What is Container?
+Where do you store Docker images(Docker Hub)?
+Common Docker Commands
+Did you use Docker in your project? If yes why?
+Disadvantages of Docker
+Crashbackloopoff in Kubernetes?
+What is AWS Fargate?
+Difference between ECS and kubernetes
+ECS vs EKS
+What is VPC?
+
+---------------------------------------------
+Designing
+---------------------------------------------
+
+Difference between OLTP and OLAP database
+What is Distributed Caching?
+What is Consistent Hashing?
+What are Caching Strategy?
+HTTP Polling, Websocket & Webhooks.
+What is Rate Limiting and Throttling? How can we use it API gateway?
+Why is REST a stateless architecture and how it is different from stateful architecture?
+What is a master slave architecture?
+How do you handle transactions in a distributed system?
+What is CORS in rest?
+What is there in spring-starter-parent dependency?
+CAP theorem in Mongo Db, Cassandra db and Dynamo Db?
+Where to choose Mongo, Cassandra, Dynamo, Redis & Elastic Search?
+What is resiliency mechanism and in orchestration design pattern what orchestration we use?
+Difference between correlation id, trace id, span id?
+Suppose there is a transaction taking place across multiple service and in one service the transaction is using multiple threads to operate. How will be track these kind of transaction and how will we log it?
+We have an order payload and inside order payload we have list or orderitem and inside each orderitem we have list of orderitems and i want to iterate over this list? how can we do that with the best complexity which is less than n square?
+We have ordering service and payment service. after placing order we redirect to the payment service and once payment is done we see that the order is not placed. How can we address this problem in microservice based architecture?
+Can you elaborate on saga pattern for this particular scenario and how this is implemented in springboot. lets say payment is successful and it sends notification to order service but at that moment order service is done. can we use kafka and compensating transaction for this?
+How is springboot reactive different from multithreading? cause we can use multithreading concepts to use async non blocking approach instead of spring boot reactive?
+
+
+---------------------------------------------
+Hibernate, SQL, DB, JPA
+-----------------------------------------------
+
+What is hibernate and why to use it?
+How does it connect with database tables?
+What are the interfaces used in hibernate?
+Annotations used in Hibernate?
+Mappings in Hibernate
+What are hibernate configuration file?
+What are hibernate Mapping file?
+Difference between openSession and getCurrentSession.
+How to integrate hibernate and Spring Application?
+How to find third highest salary given an EMPLOYEE table?
+What are indexes in SQL?
+What are the different state of object in hibernate?
+Difference between persist() and save method in JPA/Hibernate?
+Lazy Loading in hibernate
+What are the generated types in JPA?
+Explain N+1 problem in hibernate?
+What is the difference between load() and get() methods?
+Configuring Second Level Cache Behaviour?
+Acid properties in NoSQL database?
+What is Db indexing? how it is implemented?
+What is indexing in database and why is it not suggested?
+
+---------------------------------------------------
+JAVA
+---------------------------------------------------
+
+What is exception propagation and which type of exception is thrown in exception propagation?
+When you override the display() method from class A in class B what will be the allowed access specifier if it is public in class A?
+What will happen if the access specifier of display method is protected/private in class A?
+When we have two classes where one class extends the base class then what happens to the throws statement?
+What is the use of setter getter methods other than setting and retrieving value?
+Difference between volatile and atomic variable
+What is CompletableFuture?
+Thread Local
+How to identify deadlock in a system?
+A task is running in a separate thread. Stop the task if it exceeds 10 minutes.
+What is JIT compiler?
+In a rest request we can send first name, last name, wild characters for first name or last name or pan number. We have to fetch record from the table using java spring boot application  jpa and we should make this scalable for example in future we can send different field apart from first name, last name or pan number.
+How do we pass transaction id in thread ?
+We have a list of string and I want to display the string with highest length using java 8?
+I have an employee class which has a field as gender, I want to seperate out male and female employees and find their count in java 8?
+Use value from yml or property file without using @Value?
+Replace filter with Predicate? .filter(m->m.getValue()>1)
+Why is String a good key for HashMap?
+HashMap before/after Java 8
+Custom Object as Key in HashMap?
+How to retrieve value if two objects have same hashCode?
+Create Custom HashMap
+Worst time complexity for inserting an element in HashMap?
+What is JVM Profiling?
+Create add() & remove() method of ArrayList
+Internal working of a TreeMap
+I have an Employee class with variable empId, empName, dateOfJoining and supervisor(Supervisor is of Employee type) We need to sort the employees based on dateOfJoining
+Create a hashmap of key as empId and value as employee object and sort based on dateOfJoining
+What will happen if we change the type of one variable during serialization and deserialization?
+Create Immutable Class
+How to identify and mitigate stackoverflow exception?
+Identify deadlock in a system?
+Does @transactional provide table level lock or row level lock ? and what provides row level locks?
+Print method name while using AOP
+Where we use setter injection, where constructor injection and where normal autowiring?
+What does Responsebody return? difference between controller and Restcontroller?
+Can Rest Controller method accept and return XML response?
+Why is constructor injection preferred for promoting immutability?
+How do you mock a rest call to other api?
+OAUTH2 grant types
+How can we validate that Okta has shared the correct Token?
+When there are multiple microservices then how do you implement security using okta & oauth2? Do we call the okta for all the services whenever an endpoint gets called and the transaction is across multiple services?
+Using Okta and oauth2 after a token is validated how user is authorized based on scope/permission?
+
+ 
+----------------------------------------------------
+KAFKA
+----------------------------------------------------
+
+What is offset?
+Difference between offset and partition id?
+What are brokers and how is it related to partition and topic?
+When kafka server goes down how do you ensure availability and no downtime?
+How do we handle kafka message consumption if suddenly the load/number of request increases?
+How to handle scenario where load is increased in production. How will we accomodate the extra load and we do not want any downtime?
+How to spread partitions across multiple brokers to balance the load and provide redundancy?
+We have an ordering service, where we order something and then we have inventory service. When we order from ordering service it uses Saga design pattern(event driven kafka) to communicate with inventory service. Write java spring boot code to handle all happy path and negative scenarios and also consider situations where there is no downtime for the system and if the company is a telecom company then how much load does kafka experience in production per minute / per second and how do we handle if load increase?
+What are the ack Modes and what is it's exact functionality?
+Consider a scenario where we are doing batch processing and the consumer has received the messages and then it crashes. How will we regain the messages or how I can overcome this scenario?
+What is EOS in Kafka?
+
+
+---------------------------------------
+Programs
+---------------------------------------
+
+268. Missing Number
+Print all sub strings of a String
+Find All anagrams of a List of String
+Next Permutation | Practice | GeeksforGeeks
+Roman to Integer
+LRU Cache
+Merge Sorted Array
+Majority Element
+Rotate Array
+Two Sum
+No of Island problem

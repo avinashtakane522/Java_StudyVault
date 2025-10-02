@@ -1,8 +1,6 @@
 # Java_StudyVault
 All my preparation material and projects related to Core Java and Advanced Java.
 
-Java_MasterPrep
-
 📘 Notes & PDFs → Quick reference for Java concepts, interview prep, and advanced topics.
 
 💻 Source Code → Practice programs, examples, and implementations of Java features.
